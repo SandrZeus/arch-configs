@@ -1,3 +1,3 @@
 # arch-configs
 
-For color pallet, I use Catppuccin Mocha theme.
+For color pallet, I use Omarchy Osaka Jade + some of my colours.
