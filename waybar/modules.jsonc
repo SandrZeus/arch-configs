@@ -11,13 +11,31 @@
 		"all-outputs": true,
 		"format": "{name}",
 		"format-icons": {
-			"urgent": "",
-			"active": "",
-			"default": ""
-		},
-		"persistent-workspaces": {
-			"*": 10
-		}
+      "default": "",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10",
+      "active": "󱓻"
+    },
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": [],
+      "8": [],
+      "9": [],
+      "10": []
+    }
 	},
 	
 	"clock": {
@@ -58,7 +76,7 @@
     			"default": ["", "", ""]
   		},
   		"on-click": "pavucontrol",
-  		"on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
+      "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2% && [ $(pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '[0-9]+%' | head -1 | tr -d '%') -gt 150 ] && pactl set-sink-volume @DEFAULT_SINK@ 150%",
   		"on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%"
 	},
 
@@ -101,9 +119,7 @@
     		"tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
     		"tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
     		"tooltip-format-disconnected": "Disconnected",
-  		"interval": 5,
-		"on-click": "nm-connection-editor",
-    		"on-click-right": "nm-connection-editor"
+  		"interval": 5
 	}
 }
 
